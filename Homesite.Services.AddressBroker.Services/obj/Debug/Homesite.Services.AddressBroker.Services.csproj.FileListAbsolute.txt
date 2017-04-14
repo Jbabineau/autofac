@@ -1,0 +1,14 @@
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\obj\Debug\Homesite.Services.AddressBroker.Services.csprojResolveAssemblyReference.cache
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.Services.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.Services.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\AddressBrokerDotNetClient.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.DAL.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.Model.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\EntityFramework.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.DAL.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.Model.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\EntityFramework.xml
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\obj\Debug\Homesite.Services.AddressBroker.Services.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\obj\Debug\Homesite.Services.AddressBroker.Services.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.Repository.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Services\bin\Debug\Homesite.Services.AddressBroker.Repository.pdb

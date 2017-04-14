@@ -1,0 +1,10 @@
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\bin\Debug\Homesite.Services.AddressBroker.Model.dll.config
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\bin\Debug\Homesite.Services.AddressBroker.Model.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\bin\Debug\Homesite.Services.AddressBroker.Model.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\bin\Debug\EntityFramework.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\bin\Debug\EntityFramework.xml
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\obj\Debug\Homesite.Services.AddressBroker.Model.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\obj\Debug\Homesite.Services.AddressBroker.Model.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.Model\obj\Debug\Homesite.Services.AddressBroker.Model.csprojResolveAssemblyReference.cache

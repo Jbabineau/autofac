@@ -1,0 +1,12 @@
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\Homesite.Services.AddressBroker.DAL.dll.config
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\Homesite.Services.AddressBroker.DAL.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\Homesite.Services.AddressBroker.DAL.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\EntityFramework.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\Homesite.Services.AddressBroker.Model.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\Homesite.Services.AddressBroker.Model.pdb
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\EntityFramework.xml
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\obj\Debug\Homesite.Services.AddressBroker.DAL.csprojResolveAssemblyReference.cache
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\obj\Debug\Homesite.Services.AddressBroker.DAL.dll
+c:\users\jbabineau\documents\visual studio 2013\Projects\Homesite.Services.AddressBroker\Homesite.Services.AddressBroker.DAL\obj\Debug\Homesite.Services.AddressBroker.DAL.pdb

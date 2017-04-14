@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JB_Service_InfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="JB_LookupType">
+          <Key>
+            <PropertyRef Name="LookupId" />
+          </Key>
+          <Property Name="LookupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JB_MapFormat">
+          <Key>
+            <PropertyRef Name="FormatId" />
+          </Key>
+          <Property Name="FormatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Format" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JB_Maps">
+          <Key>
+            <PropertyRef Name="MapId" />
+          </Key>
+          <Property Name="MapId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FormatId" Type="int" Nullable="false" />
+          <Property Name="LookupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JB_Maps_OutputFields">
+          <Key>
+            <PropertyRef Name="MapOutputFieldId" />
+          </Key>
+          <Property Name="MapOutputFieldId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MapId" Type="int" Nullable="false" />
+          <Property Name="OutputFieldId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JB_OutputField">
+          <Key>
+            <PropertyRef Name="OutputFieldId" />
+          </Key>
+          <Property Name="OutputFieldId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JB_State_Maps">
+          <Key>
+            <PropertyRef Name="StateMapId" />
+          </Key>
+          <Property Name="StateMapId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="MapId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JB_States">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="StateCode" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__JB_Maps__FormatI__73BA3083">
+          <End Role="JB_MapFormat" Type="Self.JB_MapFormat" Multiplicity="1" />
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_MapFormat">
+              <PropertyRef Name="FormatId" />
+            </Principal>
+            <Dependent Role="JB_Maps">
+              <PropertyRef Name="FormatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_Maps__LookupI__74AE54BC">
+          <End Role="JB_LookupType" Type="Self.JB_LookupType" Multiplicity="1" />
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_LookupType">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="JB_Maps">
+              <PropertyRef Name="LookupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_Maps_O__MapId__797309D9">
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="1" />
+          <End Role="JB_Maps_OutputFields" Type="Self.JB_Maps_OutputFields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_Maps">
+              <PropertyRef Name="MapId" />
+            </Principal>
+            <Dependent Role="JB_Maps_OutputFields">
+              <PropertyRef Name="MapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_Maps_O__Outpu__7A672E12">
+          <End Role="JB_OutputField" Type="Self.JB_OutputField" Multiplicity="1" />
+          <End Role="JB_Maps_OutputFields" Type="Self.JB_Maps_OutputFields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_OutputField">
+              <PropertyRef Name="OutputFieldId" />
+            </Principal>
+            <Dependent Role="JB_Maps_OutputFields">
+              <PropertyRef Name="OutputFieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_State___MapId__00200768">
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="1" />
+          <End Role="JB_State_Maps" Type="Self.JB_State_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_Maps">
+              <PropertyRef Name="MapId" />
+            </Principal>
+            <Dependent Role="JB_State_Maps">
+              <PropertyRef Name="MapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_State___State__7F2BE32F">
+          <End Role="JB_States" Type="Self.JB_States" Multiplicity="1" />
+          <End Role="JB_State_Maps" Type="Self.JB_State_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_States">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="JB_State_Maps">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JB_Service_InfoModelStoreContainer">
+          <EntitySet Name="JB_LookupType" EntityType="Self.JB_LookupType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JB_MapFormat" EntityType="Self.JB_MapFormat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JB_Maps" EntityType="Self.JB_Maps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JB_Maps_OutputFields" EntityType="Self.JB_Maps_OutputFields" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JB_OutputField" EntityType="Self.JB_OutputField" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JB_State_Maps" EntityType="Self.JB_State_Maps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JB_States" EntityType="Self.JB_States" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__JB_Maps__FormatI__73BA3083" Association="Self.FK__JB_Maps__FormatI__73BA3083">
+            <End Role="JB_MapFormat" EntitySet="JB_MapFormat" />
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_Maps__LookupI__74AE54BC" Association="Self.FK__JB_Maps__LookupI__74AE54BC">
+            <End Role="JB_LookupType" EntitySet="JB_LookupType" />
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_Maps_O__MapId__797309D9" Association="Self.FK__JB_Maps_O__MapId__797309D9">
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+            <End Role="JB_Maps_OutputFields" EntitySet="JB_Maps_OutputFields" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_Maps_O__Outpu__7A672E12" Association="Self.FK__JB_Maps_O__Outpu__7A672E12">
+            <End Role="JB_OutputField" EntitySet="JB_OutputField" />
+            <End Role="JB_Maps_OutputFields" EntitySet="JB_Maps_OutputFields" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_State___MapId__00200768" Association="Self.FK__JB_State___MapId__00200768">
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+            <End Role="JB_State_Maps" EntitySet="JB_State_Maps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_State___State__7F2BE32F" Association="Self.FK__JB_State___State__7F2BE32F">
+            <End Role="JB_States" EntitySet="JB_States" />
+            <End Role="JB_State_Maps" EntitySet="JB_State_Maps" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JB_Service_InfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="JB_LookupType">
+          <Key>
+            <PropertyRef Name="LookupId" />
+          </Key>
+          <Property Name="LookupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="JB_Maps" Relationship="Self.FK__JB_Maps__LookupI__74AE54BC" FromRole="JB_LookupType" ToRole="JB_Maps" />
+        </EntityType>
+        <EntityType Name="JB_MapFormat">
+          <Key>
+            <PropertyRef Name="FormatId" />
+          </Key>
+          <Property Name="FormatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Format" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="JB_Maps" Relationship="Self.FK__JB_Maps__FormatI__73BA3083" FromRole="JB_MapFormat" ToRole="JB_Maps" />
+        </EntityType>
+        <EntityType Name="JB_Maps">
+          <Key>
+            <PropertyRef Name="MapId" />
+          </Key>
+          <Property Name="MapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FormatId" Type="Int32" Nullable="false" />
+          <Property Name="LookupId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="JB_LookupType" Relationship="Self.FK__JB_Maps__LookupI__74AE54BC" FromRole="JB_Maps" ToRole="JB_LookupType" />
+          <NavigationProperty Name="JB_MapFormat" Relationship="Self.FK__JB_Maps__FormatI__73BA3083" FromRole="JB_Maps" ToRole="JB_MapFormat" />
+          <NavigationProperty Name="JB_Maps_OutputFields" Relationship="Self.FK__JB_Maps_O__MapId__797309D9" FromRole="JB_Maps" ToRole="JB_Maps_OutputFields" />
+          <NavigationProperty Name="JB_State_Maps" Relationship="Self.FK__JB_State___MapId__00200768" FromRole="JB_Maps" ToRole="JB_State_Maps" />
+        </EntityType>
+        <EntityType Name="JB_Maps_OutputFields">
+          <Key>
+            <PropertyRef Name="MapOutputFieldId" />
+          </Key>
+          <Property Name="MapOutputFieldId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MapId" Type="Int32" Nullable="false" />
+          <Property Name="OutputFieldId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="JB_Maps" Relationship="Self.FK__JB_Maps_O__MapId__797309D9" FromRole="JB_Maps_OutputFields" ToRole="JB_Maps" />
+          <NavigationProperty Name="JB_OutputField" Relationship="Self.FK__JB_Maps_O__Outpu__7A672E12" FromRole="JB_Maps_OutputFields" ToRole="JB_OutputField" />
+        </EntityType>
+        <EntityType Name="JB_OutputField">
+          <Key>
+            <PropertyRef Name="OutputFieldId" />
+          </Key>
+          <Property Name="OutputFieldId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="JB_Maps_OutputFields" Relationship="Self.FK__JB_Maps_O__Outpu__7A672E12" FromRole="JB_OutputField" ToRole="JB_Maps_OutputFields" />
+        </EntityType>
+        <EntityType Name="JB_State_Maps">
+          <Key>
+            <PropertyRef Name="StateMapId" />
+          </Key>
+          <Property Name="StateMapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <Property Name="MapId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="JB_Maps" Relationship="Self.FK__JB_State___MapId__00200768" FromRole="JB_State_Maps" ToRole="JB_Maps" />
+          <NavigationProperty Name="JB_States" Relationship="Self.FK__JB_State___State__7F2BE32F" FromRole="JB_State_Maps" ToRole="JB_States" />
+        </EntityType>
+        <EntityType Name="JB_States">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StateCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="JB_State_Maps" Relationship="Self.FK__JB_State___State__7F2BE32F" FromRole="JB_States" ToRole="JB_State_Maps" />
+        </EntityType>
+        <Association Name="FK__JB_Maps__LookupI__74AE54BC">
+          <End Role="JB_LookupType" Type="Self.JB_LookupType" Multiplicity="1" />
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_LookupType">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="JB_Maps">
+              <PropertyRef Name="LookupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_Maps__FormatI__73BA3083">
+          <End Role="JB_MapFormat" Type="Self.JB_MapFormat" Multiplicity="1" />
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_MapFormat">
+              <PropertyRef Name="FormatId" />
+            </Principal>
+            <Dependent Role="JB_Maps">
+              <PropertyRef Name="FormatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_Maps_O__MapId__797309D9">
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="1" />
+          <End Role="JB_Maps_OutputFields" Type="Self.JB_Maps_OutputFields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_Maps">
+              <PropertyRef Name="MapId" />
+            </Principal>
+            <Dependent Role="JB_Maps_OutputFields">
+              <PropertyRef Name="MapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_State___MapId__00200768">
+          <End Role="JB_Maps" Type="Self.JB_Maps" Multiplicity="1" />
+          <End Role="JB_State_Maps" Type="Self.JB_State_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_Maps">
+              <PropertyRef Name="MapId" />
+            </Principal>
+            <Dependent Role="JB_State_Maps">
+              <PropertyRef Name="MapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_Maps_O__Outpu__7A672E12">
+          <End Role="JB_OutputField" Type="Self.JB_OutputField" Multiplicity="1" />
+          <End Role="JB_Maps_OutputFields" Type="Self.JB_Maps_OutputFields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_OutputField">
+              <PropertyRef Name="OutputFieldId" />
+            </Principal>
+            <Dependent Role="JB_Maps_OutputFields">
+              <PropertyRef Name="OutputFieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JB_State___State__7F2BE32F">
+          <End Role="JB_States" Type="Self.JB_States" Multiplicity="1" />
+          <End Role="JB_State_Maps" Type="Self.JB_State_Maps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JB_States">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="JB_State_Maps">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JB_Service_InfoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="JB_LookupType" EntityType="Self.JB_LookupType" />
+          <EntitySet Name="JB_MapFormat" EntityType="Self.JB_MapFormat" />
+          <EntitySet Name="JB_Maps" EntityType="Self.JB_Maps" />
+          <EntitySet Name="JB_Maps_OutputFields" EntityType="Self.JB_Maps_OutputFields" />
+          <EntitySet Name="JB_OutputField" EntityType="Self.JB_OutputField" />
+          <EntitySet Name="JB_State_Maps" EntityType="Self.JB_State_Maps" />
+          <EntitySet Name="JB_States" EntityType="Self.JB_States" />
+          <AssociationSet Name="FK__JB_Maps__LookupI__74AE54BC" Association="Self.FK__JB_Maps__LookupI__74AE54BC">
+            <End Role="JB_LookupType" EntitySet="JB_LookupType" />
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_Maps__FormatI__73BA3083" Association="Self.FK__JB_Maps__FormatI__73BA3083">
+            <End Role="JB_MapFormat" EntitySet="JB_MapFormat" />
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_Maps_O__MapId__797309D9" Association="Self.FK__JB_Maps_O__MapId__797309D9">
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+            <End Role="JB_Maps_OutputFields" EntitySet="JB_Maps_OutputFields" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_State___MapId__00200768" Association="Self.FK__JB_State___MapId__00200768">
+            <End Role="JB_Maps" EntitySet="JB_Maps" />
+            <End Role="JB_State_Maps" EntitySet="JB_State_Maps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_Maps_O__Outpu__7A672E12" Association="Self.FK__JB_Maps_O__Outpu__7A672E12">
+            <End Role="JB_OutputField" EntitySet="JB_OutputField" />
+            <End Role="JB_Maps_OutputFields" EntitySet="JB_Maps_OutputFields" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JB_State___State__7F2BE32F" Association="Self.FK__JB_State___State__7F2BE32F">
+            <End Role="JB_States" EntitySet="JB_States" />
+            <End Role="JB_State_Maps" EntitySet="JB_State_Maps" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JB_Service_InfoModelStoreContainer" CdmEntityContainer="JB_Service_InfoEntities">
+          <EntitySetMapping Name="JB_LookupType">
+            <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_LookupType">
+              <MappingFragment StoreEntitySet="JB_LookupType">
+                <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JB_MapFormat">
+            <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_MapFormat">
+              <MappingFragment StoreEntitySet="JB_MapFormat">
+                <ScalarProperty Name="FormatId" ColumnName="FormatId" />
+                <ScalarProperty Name="Format" ColumnName="Format" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JB_Maps">
+            <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_Maps">
+              <MappingFragment StoreEntitySet="JB_Maps">
+                <ScalarProperty Name="MapId" ColumnName="MapId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FormatId" ColumnName="FormatId" />
+                <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JB_Maps_OutputFields">
+            <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_Maps_OutputFields">
+              <MappingFragment StoreEntitySet="JB_Maps_OutputFields">
+                <ScalarProperty Name="MapOutputFieldId" ColumnName="MapOutputFieldId" />
+                <ScalarProperty Name="MapId" ColumnName="MapId" />
+                <ScalarProperty Name="OutputFieldId" ColumnName="OutputFieldId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JB_OutputField">
+            <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_OutputField">
+              <MappingFragment StoreEntitySet="JB_OutputField">
+                <ScalarProperty Name="OutputFieldId" ColumnName="OutputFieldId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JB_State_Maps">
+            <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_State_Maps">
+              <MappingFragment StoreEntitySet="JB_State_Maps">
+                <ScalarProperty Name="StateMapId" ColumnName="StateMapId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="MapId" ColumnName="MapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JB_States">
+            <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_States">
+              <MappingFragment StoreEntitySet="JB_States">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

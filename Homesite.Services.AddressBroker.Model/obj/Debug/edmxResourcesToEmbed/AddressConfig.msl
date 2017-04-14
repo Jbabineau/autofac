@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JB_Service_InfoModelStoreContainer" CdmEntityContainer="JB_Service_InfoEntities">
+    <EntitySetMapping Name="JB_LookupType">
+      <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_LookupType">
+        <MappingFragment StoreEntitySet="JB_LookupType">
+          <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JB_MapFormat">
+      <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_MapFormat">
+        <MappingFragment StoreEntitySet="JB_MapFormat">
+          <ScalarProperty Name="FormatId" ColumnName="FormatId" />
+          <ScalarProperty Name="Format" ColumnName="Format" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JB_Maps">
+      <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_Maps">
+        <MappingFragment StoreEntitySet="JB_Maps">
+          <ScalarProperty Name="MapId" ColumnName="MapId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FormatId" ColumnName="FormatId" />
+          <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JB_Maps_OutputFields">
+      <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_Maps_OutputFields">
+        <MappingFragment StoreEntitySet="JB_Maps_OutputFields">
+          <ScalarProperty Name="MapOutputFieldId" ColumnName="MapOutputFieldId" />
+          <ScalarProperty Name="MapId" ColumnName="MapId" />
+          <ScalarProperty Name="OutputFieldId" ColumnName="OutputFieldId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JB_OutputField">
+      <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_OutputField">
+        <MappingFragment StoreEntitySet="JB_OutputField">
+          <ScalarProperty Name="OutputFieldId" ColumnName="OutputFieldId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JB_State_Maps">
+      <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_State_Maps">
+        <MappingFragment StoreEntitySet="JB_State_Maps">
+          <ScalarProperty Name="StateMapId" ColumnName="StateMapId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="MapId" ColumnName="MapId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JB_States">
+      <EntityTypeMapping TypeName="JB_Service_InfoModel.JB_States">
+        <MappingFragment StoreEntitySet="JB_States">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
